@@ -1,0 +1,67 @@
+{
+  "name": "sonar-ai",
+  "version": "1.0.0",
+  "description": "Cross-platform lyrics viewer with Spotify-inspired UI",
+  "main": "dist-electron/main.js",
+  "author": {
+    "name": "Jason Paul Michaels",
+    "email": "software@jasonpaulmichaels.co"
+  },
+  "homepage": "https://github.com/sanchez314c/sonar-ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanchez314c/sonar-ai"
+  },
+  "license": "MIT",
+  "keywords": [
+    "lyrics",
+    "spotify",
+    "tidal",
+    "vlc",
+    "electron",
+    "desktop",
+    "music",
+    "ai"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "start": "electron . --no-sandbox",
+    "dev": "vite --port 58005",
+    "build": "vite build && electron-builder",
+    "build:linux": "vite build && electron-builder --linux",
+    "build:win": "vite build && electron-builder --win",
+    "build:mac": "vite build && electron-builder --mac",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "electron": "^35.7.5",
+    "electron-builder": "^24.9.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.33",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-plugin-electron": "^0.28.0",
+    "vite-plugin-electron-renderer": "^0.14.5"
+  }
+}

@@ -1,0 +1,64 @@
+appId: com.sonarai.app
+productName: SonarAI
+version: "1.0.0"
+directories:
+  output: release
+  buildResources: resources
+files:
+  - dist
+  - dist-electron
+  - python/**/*
+asar: true
+asarUnpack:
+  - python/**/*
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: resources/icon.ico
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: resources/icon.icns
+  category: public.app-category.music
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+  icon: resources/icons
+  category: Audio
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+dmg:
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: link
+      path: /Applications
+
+extraResources:
+  - from: python
+    to: python
+    filter:
+      - "**/*"
+      - "!__pycache__"
+      - "!*.pyc"
